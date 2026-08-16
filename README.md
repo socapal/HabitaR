@@ -42,7 +42,7 @@ remotes::install_local(
 )
 ```
 
-O desde terminal, dentro de `C:/NonCloudStorage/G13B_HabitaR/HabitaR`:
+O desde terminal, descargando el paquete y ejecutando los siguientes pasos:
 
 ```sh
 R CMD INSTALL .
