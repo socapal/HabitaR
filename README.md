@@ -15,6 +15,17 @@ La primera version del paquete se concentra en una arquitectura minima:
 
 El paquete usa solo contratos publicamente documentados del SNIIV.
 
+## Alcance actual
+
+El trabajo activo se limita a consolidar la integracion con el SNIIV. La
+incorporacion de otras APIs se conserva unicamente como una posibilidad de
+alcance futuro: no forma parte del MVP ni condiciona las decisiones de
+arquitectura de esta etapa.
+
+La [revision inicial del paquete](REVISION_INICIAL.md) registra el estado
+de la implementacion, los riesgos encontrados y el orden sugerido para los
+siguientes incrementos.
+
 ## Endpoints cubiertos
 
 - `GetFinanciamiento`
