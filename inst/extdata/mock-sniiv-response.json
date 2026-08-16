@@ -1,0 +1,16 @@
+[
+  {
+    "anio": "2024",
+    "estado": "01",
+    "modalidad": "Nueva",
+    "acciones": "10",
+    "monto": "1500000"
+  },
+  {
+    "anio": "2025",
+    "estado": "01",
+    "modalidad": "Usada",
+    "acciones": "12",
+    "monto": "1750000"
+  }
+]

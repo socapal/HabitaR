@@ -1,0 +1,38 @@
+Package: HabitaR
+Type: Package
+Title: Consultas Reproducibles a la API Publica del SNIIV
+Version: 0.0.1
+Authors@R: c(
+    person(
+      given = "Sebastian",
+      family = "Ocampo Palacios",
+      role = c("aut", "cre"),
+      email = "socampo@infonavit.org.mx"
+    )
+  )
+Description: Paquete en R para consultar de forma reproducible la API
+    publica del Sistema Nacional de Informacion e Indicadores de Vivienda
+    (SNIIV). El paquete organiza catalogos internos de endpoints y
+    dimensiones, validacion de entradas, construccion de URLs, transporte
+    HTTP, parsing de respuestas JSON y wrappers listos para analisis.
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends:
+    R (>= 4.2.0)
+Imports:
+    dplyr,
+    httr2,
+    jsonlite,
+    purrr,
+    rlang,
+    stringr,
+    tibble
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/roxygen2/version: 8.1.0
+Config/testthat/edition: 3
+VignetteBuilder: knitr

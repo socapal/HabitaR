@@ -1,0 +1,82 @@
+---
+title: "Introduccion al modulo SNIIV de HabitaR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduccion al modulo SNIIV de HabitaR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Proposito
+
+Esta vignette presenta la primera capa del modulo SNIIV dentro de `HabitaR`.
+La idea central es ofrecer una interfaz reproducible para los endpoints
+publicos documentados del SNIIV, separando:
+
+- catalogos internos;
+- validacion de entradas;
+- construccion de URLs;
+- consulta HTTP;
+- parsing y limpieza de respuestas.
+
+## Endpoints disponibles
+
+```{r}
+HabitaR::sniiv_endpoints()
+```
+
+## Dimensiones por servicio
+
+```{r}
+HabitaR::sniiv_dimensions("financiamiento")
+```
+
+## Construccion de URL
+
+```{r}
+HabitaR::sniiv_build_url(
+  servicio = "infonavit",
+  years = c(2024, 2025),
+  state = "00",
+  municipality = "000",
+  dimensions = c("anio", "estado", "modalidad")
+)
+```
+
+## Parsing offline
+
+```{r}
+raw_text <- paste(
+  readLines(
+    system.file("extdata", "mock-sniiv-response.json", package = "HabitaR"),
+    warn = FALSE
+  ),
+  collapse = "\n"
+)
+
+HabitaR:::parse_sniiv_response(
+  raw_text = raw_text,
+  dimensions = c("anio", "estado", "modalidad")
+)
+```
+
+## Consulta real
+
+El siguiente bloque ilustra una consulta real, pero no se ejecuta al compilar
+la vignette para mantenerla reproducible en entornos sin red.
+
+```{r eval = FALSE}
+HabitaR::get_financiamiento(
+  years = c(2024, 2025),
+  state = "00",
+  municipality = "000",
+  dimensions = c("anio", "estado", "organismo")
+)
+```
