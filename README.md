@@ -45,18 +45,8 @@ como verificacion y produccion.
 Desde una sesion de R:
 
 ```r
-install.packages("remotes")
-remotes::install_local(
-  "C:/NonCloudStorage/G13B_HabitaR/HabitaR",
-  upgrade = "never",
-  dependencies = TRUE
-)
-```
-
-O desde terminal, descargando el paquete y ejecutando los siguientes pasos:
-
-```sh
-R CMD INSTALL .
+install.packages("pak")
+pak::pkg_install("socapal/HabitaR")
 ```
 
 ## Inicio rapido
